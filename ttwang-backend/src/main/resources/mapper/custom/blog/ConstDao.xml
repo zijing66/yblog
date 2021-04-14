@@ -3,12 +3,12 @@
 <!-- ============================================================== -->
 <!-- ===============可直接使用Base配置文件中定义的节点=============== -->
 <!-- ============================================================== -->
-<mapper namespace="com.yanger.blog.dao.ConstDao">
+<mapper namespace="com.ttwang.blog.dao.ConstDao">
 
-	<resultMap id="DetailsResultMap" type="com.yanger.blog.po.ArticleType" extends="com.yanger.blog.dao.ConstDao.BaseResultMap">
+	<resultMap id="DetailsResultMap" type="com.ttwang.blog.po.ArticleType" extends="com.ttwang.blog.dao.ConstDao.BaseResultMap">
 		<!--num属性-->
 		<association property="num" column="code" javaType="integer"
-					 select="com.yanger.blog.dao.ConstDao.getCountByUpperCode"/>
+					 select="com.ttwang.blog.dao.ConstDao.getCountByUpperCode"/>
 	</resultMap>
 
 	<!-- 根据描述depict查询 -->
@@ -20,7 +20,7 @@
 	</select>
 	
 	<!-- 按对象查询一页记录（多条记录） -->
-	<select id="selectPageByVo" resultMap="BaseResultMap" parameterType="com.yanger.blog.vo.ConstVo">
+	<select id="selectPageByVo" resultMap="BaseResultMap" parameterType="com.ttwang.blog.vo.ConstVo">
 		select
 			<include refid="Base_Column_List" />
 		from const
@@ -31,7 +31,7 @@
 	</select>
 
 	<!-- 按对象查询一页文章分类记录（多条记录） -->
-	<select id="selectArtTypePage" resultMap="DetailsResultMap" parameterType="com.yanger.blog.vo.ConstVo">
+	<select id="selectArtTypePage" resultMap="DetailsResultMap" parameterType="com.ttwang.blog.vo.ConstVo">
 		select
 		<include refid="Base_Column_List" />
 		from const

@@ -3,7 +3,7 @@
 <!-- ============================================================== -->
 <!-- ================可直接使用Base配置文件中定义的节点============== -->
 <!-- ============================================================== -->
-<mapper namespace="com.yanger.blog.dao.ArticleKindDao">
+<mapper namespace="com.ttwang.blog.dao.ArticleKindDao">
 
 	<!-- 查询所有文章分类数据 -->
 	<select id="findAll" resultMap="BaseResultMap" parameterType="String">
@@ -29,7 +29,7 @@
 		GROUP BY article.module, article.type, article.classify;
 	</insert>
 
-	<select id="dateSum" resultType="com.yanger.blog.po.DateSum" parameterType="string">
+	<select id="dateSum" resultType="com.ttwang.blog.po.DateSum" parameterType="string">
 		SELECT DATE_FORMAT(insert_time,"%Y-%m") AS artDate ,COUNT(*) as sum FROM article
 		<if test="type != null">
 		  	WHERE module = #{type}

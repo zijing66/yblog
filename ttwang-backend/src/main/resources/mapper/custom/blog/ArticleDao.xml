@@ -3,10 +3,10 @@
 <!-- ============================================================== -->
 <!-- ================可直接使用Base配置文件中定义的节点============== -->
 <!-- ============================================================== -->
-<mapper namespace="com.yanger.blog.dao.ArticleDao">
+<mapper namespace="com.ttwang.blog.dao.ArticleDao">
  
   	<!-- 根据vo进行查询 -->
-	<select id="selectPageByVo" resultMap="BaseResultMap" parameterType="com.yanger.blog.vo.ArticleVo">
+	<select id="selectPageByVo" resultMap="BaseResultMap" parameterType="com.ttwang.blog.vo.ArticleVo">
 		select
 			<include refid="Base_Column_List" />
 		from article
@@ -30,7 +30,7 @@
 	</update>
 
 	<!-- 按对象查询一页记录（多条记录） -->
-	<select id="getHotArts" resultMap="BaseResultMap" parameterType="com.yanger.blog.po.Article">
+	<select id="getHotArts" resultMap="BaseResultMap" parameterType="com.ttwang.blog.po.Article">
 		select article_id, title, likes, views from article
 		<where>
 			<include refid="Base_Select_By_Entity_Where" />

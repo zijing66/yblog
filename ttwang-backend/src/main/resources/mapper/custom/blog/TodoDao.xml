@@ -3,10 +3,10 @@
 <!-- ============================================================== -->
 <!-- ===============可直接使用Base配置文件中定义的节点=============== -->
 <!-- ============================================================== -->
-<mapper namespace="com.yanger.blog.dao.TodoDao">
+<mapper namespace="com.ttwang.blog.dao.TodoDao">
 
 	<!-- 按对象查询一页记录（多条记录） -->
-	<select id="selectPageByVo" resultMap="BaseResultMap" parameterType="com.yanger.blog.vo.TodoVo">
+	<select id="selectPageByVo" resultMap="BaseResultMap" parameterType="com.ttwang.blog.vo.TodoVo">
 		select
 			<include refid="Base_Column_List" />
 		from todo

@@ -4,10 +4,10 @@
 <!-- =======      通过com.yanger.generator包代码工具自动生成           ======= -->
 <!-- =======   本配置文件中定义的节点可在自定义配置文件中直接使用     ======= -->
 <!-- ============================================================== -->
-<mapper namespace="com.yanger.blog.dao.ConstDao">
+<mapper namespace="com.ttwang.blog.dao.ConstDao">
 
 	<!-- 通用查询结果对象-->
-	<resultMap id="BaseResultMap" type="com.yanger.blog.po.Const">
+	<resultMap id="BaseResultMap" type="com.ttwang.blog.po.Const">
 		 <id column="id" property="id"/> 
 		 <result column="depict" property="depict"/> 
 		 <result column="code" property="code"/> 
@@ -82,7 +82,7 @@
 	</select>
 
 	<!-- 按对象查询一页记录（多条记录） -->
-	<select id="selectPage" resultMap="BaseResultMap" parameterType="com.yanger.blog.po.Const">
+	<select id="selectPage" resultMap="BaseResultMap" parameterType="com.ttwang.blog.po.Const">
 		<include refid="Base_Select_By_Entity" />
 	</select>
 
@@ -102,7 +102,7 @@
 	</delete>
 
 	<!-- 完整插入一条记录-->
-	<insert id="insert" useGeneratedKeys="true" keyProperty="id" parameterType="com.yanger.blog.po.Const">
+	<insert id="insert" useGeneratedKeys="true" keyProperty="id" parameterType="com.ttwang.blog.po.Const">
 		insert into const (id, depict, code, val, upper_code, 
 			status, insert_time, update_time)
 		values(#{id}, #{depict}, #{code}, #{val}, #{upperCode}, 
@@ -110,7 +110,7 @@
 	</insert>
 
 	<!-- 插入一条记录(为空的字段不操作) -->
-	<insert id="insertVal" useGeneratedKeys="true" keyProperty="id" parameterType="com.yanger.blog.po.Const">
+	<insert id="insertVal" useGeneratedKeys="true" keyProperty="id" parameterType="com.ttwang.blog.po.Const">
 		insert into const
 		<trim prefix="(" suffix=")" suffixOverrides="," >
 			<if test="id != null" >
@@ -167,7 +167,7 @@
 	</insert>
 
 	<!-- 更新一条记录(为空的字段不操作) -->
-	<update id="updateValById" useGeneratedKeys="true" keyProperty="id" parameterType="com.yanger.blog.po.Const">
+	<update id="updateValById" useGeneratedKeys="true" keyProperty="id" parameterType="com.ttwang.blog.po.Const">
 		update const
 		<set>
 			<if test="depict != null" >
@@ -196,7 +196,7 @@
 	</update>
 
 	<!-- 完整更新一条记录 -->
-	<update id="updateById" useGeneratedKeys="true" keyProperty="id" parameterType="com.yanger.blog.po.Const">
+	<update id="updateById" useGeneratedKeys="true" keyProperty="id" parameterType="com.ttwang.blog.po.Const">
 		update const
 		set depict=#{depict},
 			code=#{code},

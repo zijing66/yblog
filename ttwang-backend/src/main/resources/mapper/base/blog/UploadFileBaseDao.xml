@@ -4,10 +4,10 @@
 <!-- =======      通过com.yanger.generator包代码工具自动生成           ======= -->
 <!-- =======   本配置文件中定义的节点可在自定义配置文件中直接使用     ======= -->
 <!-- ============================================================== -->
-<mapper namespace="com.yanger.blog.dao.UploadFileDao">
+<mapper namespace="com.ttwang.blog.dao.UploadFileDao">
 
 	<!-- 通用查询结果对象-->
-	<resultMap id="BaseResultMap" type="com.yanger.blog.po.UploadFile">
+	<resultMap id="BaseResultMap" type="com.ttwang.blog.po.UploadFile">
 		 <id column="path_id" property="pathId"/> 
 		 <result column="type" property="type"/> 
 		 <result column="classify" property="classify"/> 
@@ -95,7 +95,7 @@
 	</select>
 
 	<!-- 按对象查询一页记录（多条记录） -->
-	<select id="selectPage" resultMap="BaseResultMap" parameterType="com.yanger.blog.po.UploadFile">
+	<select id="selectPage" resultMap="BaseResultMap" parameterType="com.ttwang.blog.po.UploadFile">
 		<include refid="Base_Select_By_Entity" />
 	</select>
 
@@ -115,7 +115,7 @@
 	</delete>
 
 	<!-- 完整插入一条记录-->
-	<insert id="insert" useGeneratedKeys="true" keyProperty="path_id" parameterType="com.yanger.blog.po.UploadFile">
+	<insert id="insert" useGeneratedKeys="true" keyProperty="path_id" parameterType="com.ttwang.blog.po.UploadFile">
 		insert into upload_file (path_id, type, classify, file_name, suffix, 
 			img_path, sequence, user_id, status, insert_time, 
 			update_time)
@@ -125,7 +125,7 @@
 	</insert>
 
 	<!-- 插入一条记录(为空的字段不操作) -->
-	<insert id="insertVal" useGeneratedKeys="true" keyProperty="path_id" parameterType="com.yanger.blog.po.UploadFile">
+	<insert id="insertVal" useGeneratedKeys="true" keyProperty="path_id" parameterType="com.ttwang.blog.po.UploadFile">
 		insert into upload_file
 		<trim prefix="(" suffix=")" suffixOverrides="," >
 			<if test="pathId != null" >
@@ -200,7 +200,7 @@
 	</insert>
 
 	<!-- 更新一条记录(为空的字段不操作) -->
-	<update id="updateValById" useGeneratedKeys="true" keyProperty="path_id" parameterType="com.yanger.blog.po.UploadFile">
+	<update id="updateValById" useGeneratedKeys="true" keyProperty="path_id" parameterType="com.ttwang.blog.po.UploadFile">
 		update upload_file
 		<set>
 			<if test="type != null" >
@@ -238,7 +238,7 @@
 	</update>
 
 	<!-- 完整更新一条记录 -->
-	<update id="updateById" useGeneratedKeys="true" keyProperty="path_id" parameterType="com.yanger.blog.po.UploadFile">
+	<update id="updateById" useGeneratedKeys="true" keyProperty="path_id" parameterType="com.ttwang.blog.po.UploadFile">
 		update upload_file
 		set type=#{type},
 			classify=#{classify},

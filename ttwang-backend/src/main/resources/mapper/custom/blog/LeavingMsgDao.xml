@@ -3,9 +3,9 @@
 <!-- ============================================================== -->
 <!-- ================可直接使用Base配置文件中定义的节点============== -->
 <!-- ============================================================== -->
-<mapper namespace="com.yanger.blog.dao.LeavingMsgDao">
+<mapper namespace="com.ttwang.blog.dao.LeavingMsgDao">
 	
-	<resultMap id="VoResultMap" type="com.yanger.blog.vo.LeavingMsgVo">
+	<resultMap id="VoResultMap" type="com.ttwang.blog.vo.LeavingMsgVo">
 		 <id column="msg_id" property="msgId"/> 
 		 <result column="type" property="type"/> 
 		 <result column="user_id" property="userId"/> 
@@ -25,7 +25,7 @@
 	</resultMap>
 	
 	<!-- 按Vo对象查询一页记录（多条记录） -->
-	<select id="selectPageForVo" resultMap="VoResultMap" parameterType="com.yanger.blog.po.LeavingMsg">
+	<select id="selectPageForVo" resultMap="VoResultMap" parameterType="com.ttwang.blog.po.LeavingMsg">
 		select msg.msg_id, msg.type, msg.user_id, msg.article_id, msg.content, msg.upper_id, msg.msg_order, msg.status, msg.insert_time, msg.update_time, 
 		user.user_nick_name, user.user_img_path, 
 		art.art_img_path, art.title

@@ -4,10 +4,10 @@
 <!-- =======      通过com.yanger.generator包代码工具自动生成           ======= -->
 <!-- =======   本配置文件中定义的节点可在自定义配置文件中直接使用     ======= -->
 <!-- ============================================================== -->
-<mapper namespace="com.yanger.blog.dao.ArticleDao">
+<mapper namespace="com.ttwang.blog.dao.ArticleDao">
 
 	<!-- 通用查询结果对象-->
-	<resultMap id="BaseResultMap" type="com.yanger.blog.po.Article">
+	<resultMap id="BaseResultMap" type="com.ttwang.blog.po.Article">
 		 <id column="article_id" property="articleId"/> 
 		 <result column="module" property="module"/> 
 		 <result column="type" property="type"/> 
@@ -133,7 +133,7 @@
 	</select>
 
 	<!-- 按对象查询一页记录（多条记录） -->
-	<select id="selectPage" resultMap="BaseResultMap" parameterType="com.yanger.blog.po.Article">
+	<select id="selectPage" resultMap="BaseResultMap" parameterType="com.ttwang.blog.po.Article">
 		<include refid="Base_Select_By_Entity" />
 	</select>
 
@@ -153,7 +153,7 @@
 	</delete>
 
 	<!-- 完整插入一条记录-->
-	<insert id="insert" useGeneratedKeys="true" keyProperty="article_id" parameterType="com.yanger.blog.po.Article">
+	<insert id="insert" useGeneratedKeys="true" keyProperty="article_id" parameterType="com.ttwang.blog.po.Article">
 		insert into article (article_id, module, type, classify, title, 
 			author, user_id, rux_words, summary, content, 
 			word_content, word_type, art_state, art_img_path, likes, 
@@ -167,7 +167,7 @@
 	</insert>
 
 	<!-- 插入一条记录(为空的字段不操作) -->
-	<insert id="insertVal" useGeneratedKeys="true" keyProperty="article_id" parameterType="com.yanger.blog.po.Article">
+	<insert id="insertVal" useGeneratedKeys="true" keyProperty="article_id" parameterType="com.ttwang.blog.po.Article">
 		insert into article
 		<trim prefix="(" suffix=")" suffixOverrides="," >
 			<if test="articleId != null" >
@@ -296,7 +296,7 @@
 	</insert>
 
 	<!-- 更新一条记录(为空的字段不操作) -->
-	<update id="updateValById" useGeneratedKeys="true" keyProperty="article_id" parameterType="com.yanger.blog.po.Article">
+	<update id="updateValById" useGeneratedKeys="true" keyProperty="article_id" parameterType="com.ttwang.blog.po.Article">
 		update article
 		<set>
 			<if test="module != null" >
@@ -361,7 +361,7 @@
 	</update>
 
 	<!-- 完整更新一条记录 -->
-	<update id="updateById" useGeneratedKeys="true" keyProperty="article_id" parameterType="com.yanger.blog.po.Article">
+	<update id="updateById" useGeneratedKeys="true" keyProperty="article_id" parameterType="com.ttwang.blog.po.Article">
 		update article
 		set module=#{module},
 			type=#{type},

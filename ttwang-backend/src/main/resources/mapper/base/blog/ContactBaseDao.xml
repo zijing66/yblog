@@ -4,10 +4,10 @@
 <!-- =======      通过com.yanger.generator包代码工具自动生成           ======= -->
 <!-- =======   本配置文件中定义的节点可在自定义配置文件中直接使用     ======= -->
 <!-- ============================================================== -->
-<mapper namespace="com.yanger.blog.dao.ContactDao">
+<mapper namespace="com.ttwang.blog.dao.ContactDao">
 
 	<!-- 通用查询结果对象-->
-	<resultMap id="BaseResultMap" type="com.yanger.blog.po.Contact">
+	<resultMap id="BaseResultMap" type="com.ttwang.blog.po.Contact">
 		 <id column="contact_id" property="contactId"/> 
 		 <result column="type" property="type"/> 
 		 <result column="name" property="name"/> 
@@ -91,7 +91,7 @@
 	</select>
 
 	<!-- 按对象查询一页记录（多条记录） -->
-	<select id="selectPage" resultMap="BaseResultMap" parameterType="com.yanger.blog.po.Contact">
+	<select id="selectPage" resultMap="BaseResultMap" parameterType="com.ttwang.blog.po.Contact">
 		<include refid="Base_Select_By_Entity" />
 	</select>
 
@@ -111,7 +111,7 @@
 	</delete>
 
 	<!-- 完整插入一条记录-->
-	<insert id="insert" useGeneratedKeys="true" keyProperty="contact_id" parameterType="com.yanger.blog.po.Contact">
+	<insert id="insert" useGeneratedKeys="true" keyProperty="contact_id" parameterType="com.ttwang.blog.po.Contact">
 		insert into contact (contact_id, type, name, depict, words, 
 			user_id, img_path, status, insert_time, update_time
 			)
@@ -121,7 +121,7 @@
 	</insert>
 
 	<!-- 插入一条记录(为空的字段不操作) -->
-	<insert id="insertVal" useGeneratedKeys="true" keyProperty="contact_id" parameterType="com.yanger.blog.po.Contact">
+	<insert id="insertVal" useGeneratedKeys="true" keyProperty="contact_id" parameterType="com.ttwang.blog.po.Contact">
 		insert into contact
 		<trim prefix="(" suffix=")" suffixOverrides="," >
 			<if test="contactId != null" >
@@ -190,7 +190,7 @@
 	</insert>
 
 	<!-- 更新一条记录(为空的字段不操作) -->
-	<update id="updateValById" useGeneratedKeys="true" keyProperty="contact_id" parameterType="com.yanger.blog.po.Contact">
+	<update id="updateValById" useGeneratedKeys="true" keyProperty="contact_id" parameterType="com.ttwang.blog.po.Contact">
 		update contact
 		<set>
 			<if test="type != null" >
@@ -225,7 +225,7 @@
 	</update>
 
 	<!-- 完整更新一条记录 -->
-	<update id="updateById" useGeneratedKeys="true" keyProperty="contact_id" parameterType="com.yanger.blog.po.Contact">
+	<update id="updateById" useGeneratedKeys="true" keyProperty="contact_id" parameterType="com.ttwang.blog.po.Contact">
 		update contact
 		set type=#{type},
 			name=#{name},

@@ -4,10 +4,10 @@
 <!-- =======      通过com.yanger.generator包代码工具自动生成           ======= -->
 <!-- =======   本配置文件中定义的节点可在自定义配置文件中直接使用     ======= -->
 <!-- ============================================================== -->
-<mapper namespace="com.yanger.blog.dao.LeavingMsgDao">
+<mapper namespace="com.ttwang.blog.dao.LeavingMsgDao">
 
 	<!-- 通用查询结果对象-->
-	<resultMap id="BaseResultMap" type="com.yanger.blog.po.LeavingMsg">
+	<resultMap id="BaseResultMap" type="com.ttwang.blog.po.LeavingMsg">
 		 <id column="msg_id" property="msgId"/> 
 		 <result column="type" property="type"/> 
 		 <result column="user_id" property="userId"/> 
@@ -90,7 +90,7 @@
 	</select>
 
 	<!-- 按对象查询一页记录（多条记录） -->
-	<select id="selectPage" resultMap="BaseResultMap" parameterType="com.yanger.blog.po.LeavingMsg">
+	<select id="selectPage" resultMap="BaseResultMap" parameterType="com.ttwang.blog.po.LeavingMsg">
 		<include refid="Base_Select_By_Entity" />
 	</select>
 
@@ -110,7 +110,7 @@
 	</delete>
 
 	<!-- 完整插入一条记录-->
-	<insert id="insert" useGeneratedKeys="true" keyProperty="msg_id" parameterType="com.yanger.blog.po.LeavingMsg">
+	<insert id="insert" useGeneratedKeys="true" keyProperty="msg_id" parameterType="com.ttwang.blog.po.LeavingMsg">
 		insert into leaving_msg (msg_id, type, user_id, article_id, content, 
 			upper_id, msg_order, status, insert_time, update_time
 			)
@@ -120,7 +120,7 @@
 	</insert>
 
 	<!-- 插入一条记录(为空的字段不操作) -->
-	<insert id="insertVal" useGeneratedKeys="true" keyProperty="msg_id" parameterType="com.yanger.blog.po.LeavingMsg">
+	<insert id="insertVal" useGeneratedKeys="true" keyProperty="msg_id" parameterType="com.ttwang.blog.po.LeavingMsg">
 		insert into leaving_msg
 		<trim prefix="(" suffix=")" suffixOverrides="," >
 			<if test="msgId != null" >
@@ -189,7 +189,7 @@
 	</insert>
 
 	<!-- 更新一条记录(为空的字段不操作) -->
-	<update id="updateValById" useGeneratedKeys="true" keyProperty="msg_id" parameterType="com.yanger.blog.po.LeavingMsg">
+	<update id="updateValById" useGeneratedKeys="true" keyProperty="msg_id" parameterType="com.ttwang.blog.po.LeavingMsg">
 		update leaving_msg
 		<set>
 			<if test="type != null" >
@@ -224,7 +224,7 @@
 	</update>
 
 	<!-- 完整更新一条记录 -->
-	<update id="updateById" useGeneratedKeys="true" keyProperty="msg_id" parameterType="com.yanger.blog.po.LeavingMsg">
+	<update id="updateById" useGeneratedKeys="true" keyProperty="msg_id" parameterType="com.ttwang.blog.po.LeavingMsg">
 		update leaving_msg
 		set type=#{type},
 			user_id=#{userId},

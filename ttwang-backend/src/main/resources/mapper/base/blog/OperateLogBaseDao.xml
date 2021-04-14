@@ -4,10 +4,10 @@
 <!-- =======      通过com.yanger.generator包代码工具自动生成           ======= -->
 <!-- =======   本配置文件中定义的节点可在自定义配置文件中直接使用     ======= -->
 <!-- ============================================================== -->
-<mapper namespace="com.yanger.blog.dao.OperateLogDao">
+<mapper namespace="com.ttwang.blog.dao.OperateLogDao">
 
 	<!-- 通用查询结果对象-->
-	<resultMap id="BaseResultMap" type="com.yanger.blog.po.OperateLog">
+	<resultMap id="BaseResultMap" type="com.ttwang.blog.po.OperateLog">
 		 <id column="log_id" property="logId"/> 
 		 <result column="operator_id" property="operatorId"/> 
 		 <result column="operate_ip" property="operateIp"/> 
@@ -91,7 +91,7 @@
 	</select>
 
 	<!-- 按对象查询一页记录（多条记录） -->
-	<select id="selectPage" resultMap="BaseResultMap" parameterType="com.yanger.blog.po.OperateLog">
+	<select id="selectPage" resultMap="BaseResultMap" parameterType="com.ttwang.blog.po.OperateLog">
 		<include refid="Base_Select_By_Entity" />
 	</select>
 
@@ -111,7 +111,7 @@
 	</delete>
 
 	<!-- 完整插入一条记录-->
-	<insert id="insert" useGeneratedKeys="true" keyProperty="log_id" parameterType="com.yanger.blog.po.OperateLog">
+	<insert id="insert" useGeneratedKeys="true" keyProperty="log_id" parameterType="com.ttwang.blog.po.OperateLog">
 		insert into operate_log (log_id, operator_id, operate_ip, operate_type, operate_desc, 
 			request_params, request_url, status, insert_time, update_time
 			)
@@ -121,7 +121,7 @@
 	</insert>
 
 	<!-- 插入一条记录(为空的字段不操作) -->
-	<insert id="insertVal" useGeneratedKeys="true" keyProperty="log_id" parameterType="com.yanger.blog.po.OperateLog">
+	<insert id="insertVal" useGeneratedKeys="true" keyProperty="log_id" parameterType="com.ttwang.blog.po.OperateLog">
 		insert into operate_log
 		<trim prefix="(" suffix=")" suffixOverrides="," >
 			<if test="logId != null" >
@@ -190,7 +190,7 @@
 	</insert>
 
 	<!-- 更新一条记录(为空的字段不操作) -->
-	<update id="updateValById" useGeneratedKeys="true" keyProperty="log_id" parameterType="com.yanger.blog.po.OperateLog">
+	<update id="updateValById" useGeneratedKeys="true" keyProperty="log_id" parameterType="com.ttwang.blog.po.OperateLog">
 		update operate_log
 		<set>
 			<if test="operatorId != null" >
@@ -225,7 +225,7 @@
 	</update>
 
 	<!-- 完整更新一条记录 -->
-	<update id="updateById" useGeneratedKeys="true" keyProperty="log_id" parameterType="com.yanger.blog.po.OperateLog">
+	<update id="updateById" useGeneratedKeys="true" keyProperty="log_id" parameterType="com.ttwang.blog.po.OperateLog">
 		update operate_log
 		set operator_id=#{operatorId},
 			operate_ip=#{operateIp},
